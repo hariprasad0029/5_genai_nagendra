@@ -1,0 +1,7 @@
+pandas
+pypdf
+python-docx
+docx2txt
+langchain
+azure-storage-blob
+boto3
