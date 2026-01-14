@@ -38,7 +38,7 @@ st.write("Number of text chunks:", len(texts))
 
 # Download embeddings
 embeddings = OpenAIEmbeddings(
-    openai_api_key="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"
+    openai_api_key=os.getenv("OPENAI_API_KEY")
 )
 
 # Create the document search
@@ -48,7 +48,7 @@ docsearch = FAISS.from_texts(texts, embeddings)
 qa = ConversationalRetrievalChain.from_llm(
     llm=OpenAI(
         model="davinci-002",
-        openai_api_key="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",
+        openai_api_key=os.getenv("OPENAI_API_KEY"),
     ),
     retriever=docsearch.as_retriever(),
     return_source_documents=True,
