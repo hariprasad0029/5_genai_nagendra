@@ -14,3 +14,11 @@ wheels/
 
 # MacOS
 .DS_Store
+
+# Data Files
+*.pkl
+*.idx
+
+# Track pdf_data directory but ignore its contents
+pdf_data/*
+!pdf_data/.gitkeep
